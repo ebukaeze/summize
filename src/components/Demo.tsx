@@ -86,7 +86,7 @@ const Demo = () => {
           </button>
         </form>
 
-        <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
+        {/* <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
           {allArticles?.map((item: any, index: number) => (
             <div
               key={`link-${index}`}
@@ -101,7 +101,7 @@ const Demo = () => {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
       <div className="flex items-center my-10 max-w-full justify-center">
         {isFetching ? (
