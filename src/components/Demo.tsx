@@ -87,7 +87,7 @@ const Demo = () => {
         </form>
 
         <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
-          {allArticles.map((item: any, index: number) => (
+          {allArticles?.map((item: any, index: number) => (
             <div
               key={`link-${index}`}
               onClick={() => setArticle(item)}
