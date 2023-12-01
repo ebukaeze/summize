@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { IoCopyOutline, IoSend } from "react-icons/io5";
-import { FaClipboardCheck } from "react-icons/fa";
+import { IoSend } from "react-icons/io5";
+//import { FaClipboardCheck } from "react-icons/fa";
 import { GoPaperclip } from "react-icons/go";
 import { useLazyGetSummaryQuery } from "../services/article";
 import loader from "../assets/loader.svg";
@@ -11,7 +11,7 @@ const Demo = () => {
     summary: "",
   });
   const [allArticles, setAllArticles] = useState<any>([]);
-  const [copied, setCopied] = useState<any>("");
+  //const [copied, setCopied] = useState<any>("");
 
   console.log(allArticles);
   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
@@ -53,13 +53,13 @@ const Demo = () => {
     }
   };
 
-  const handleCopy = (copyUrl: string) => {
+  /* const handleCopy = (copyUrl: string) => {
     setCopied(copyUrl);
     navigator.clipboard.writeText(copyUrl);
     setTimeout(() => {
       setCopied(false), 3000;
     });
-  };
+  }; */
   return (
     <section className="mt-16 w-full max-w-xl">
       {/* Searchbar
