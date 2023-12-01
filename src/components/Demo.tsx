@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { IoSend } from "react-icons/io5";
-//import { FaClipboardCheck } from "react-icons/fa";
 import { GoPaperclip } from "react-icons/go";
 import { useLazyGetSummaryQuery } from "../services/article";
 import loader from "../assets/loader.svg";
@@ -11,13 +10,11 @@ const Demo = () => {
     summary: "",
   });
   const [allArticles, setAllArticles] = useState<any>([]);
-  //const [copied, setCopied] = useState<any>("");
 
   console.log(allArticles);
   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
 
   useEffect(() => {
-    // const articlesFromLocalStorage = JSON.parse(localStorage.getItem("articles") || '{}');
     const storeUpdatedAllArticle = () => {
       const articlesFromLocalStorage = JSON.parse(
         localStorage.getItem("articles") || "{}"
@@ -53,13 +50,6 @@ const Demo = () => {
     }
   };
 
-  /* const handleCopy = (copyUrl: string) => {
-    setCopied(copyUrl);
-    navigator.clipboard.writeText(copyUrl);
-    setTimeout(() => {
-      setCopied(false), 3000;
-    });
-  }; */
   return (
     <section className="mt-16 w-full max-w-xl">
       {/* Searchbar
@@ -85,23 +75,6 @@ const Demo = () => {
             <IoSend />
           </button>
         </form>
-
-        {/* <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
-          {allArticles?.map((item: any, index: number) => (
-            <div
-              key={`link-${index}`}
-              onClick={() => setArticle(item)}
-              className="link_card"
-            >
-              <div className="copy_btn" onClick={() => handleCopy(item.url)}>
-                {copied === item.url ? <FaClipboardCheck /> : <IoCopyOutline />}
-              </div>
-              <p className="flex-1 font-satoshi text-sm font-medium text-blue-700">
-                {item.url}
-              </p>
-            </div>
-          ))}
-        </div> */}
       </div>
       <div className="flex items-center my-10 max-w-full justify-center">
         {isFetching ? (
