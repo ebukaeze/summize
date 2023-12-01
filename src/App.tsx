@@ -7,7 +7,7 @@ function App() {
       <div className="main">
         <div className="gradient" />
       </div>
-      <div className="app">
+      <div className="app xs:gap-y-8">
         <Hero />
         <Demo />
       </div>
